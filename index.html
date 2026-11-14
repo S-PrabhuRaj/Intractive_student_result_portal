@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Result Portal</h1>
+            <p>Check your examination results</p>
+        </header>
+
+        <main>
+            <h2>Find Your Result</h2>
+            <label for="rollNumber">Enter your Roll Number</label>
+            <input type="text" id="rollNumber" placeholder="Example: 101">
+            <button onclick="checkResult()">Check Result</button>
+
+            <p id="message"></p>
+
+            <section id="result" class="result-box">
+                <h2>Student Mark Sheet</h2>
+                <p><strong>Name:</strong> <span id="studentName"></span></p>
+                <p><strong>Roll Number:</strong> <span id="studentRoll"></span></p>
+                <p><strong>Course:</strong> <span id="studentCourse"></span></p>
+
+                <table>
+                    <thead>
+                        <tr><th>Subject</th><th>Marks</th></tr>
+                    </thead>
+                    <tbody id="marksTable"></tbody>
+                </table>
+
+                <p><strong>Total:</strong> <span id="total"></span> / 300</p>
+                <p><strong>Percentage:</strong> <span id="percentage"></span></p>
+                <p><strong>Grade:</strong> <span id="grade"></span></p>
+                <p><strong>Result:</strong> <span id="status"></span></p>
+            </section>
+        </main>
+
+        <footer>© 2026 Student Result Portal</footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
