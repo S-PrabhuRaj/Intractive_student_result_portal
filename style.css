@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fc;
+  color: #202b3c;
+  min-height: 100vh;
+}
+
+.topbar {
+  background: #172554;
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.container {
+  width: min(850px, 92%);
+  margin: 42px auto;
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 9px;
+}
+
+.welcome h1 {
+  font-size: clamp(28px, 5vw, 38px);
+  margin-bottom: 10px;
+  color: #172554;
+}
+
+.welcome p:last-child {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.search-card, .result-card, .notice {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(23, 37, 84, 0.08);
+}
+
+.search-card {
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.search-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-row input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 13px 20px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.hint {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.message {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #dc2626;
+}
+
+.result-card {
+  padding: 26px;
+  margin-bottom: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+}
+
+.result-heading h2 {
+  color: #172554;
+}
+
+.status-badge {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-badge.fail {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.student-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.student-info div, .summary div {
+  background: #f8fafc;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.student-info span, .summary span {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.student-info strong, .summary strong {
+  color: #172554;
+}
+
+.result-card h3 {
+  margin-bottom: 12px;
+  color: #172554;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 430px;
+}
+
+th, td {
+  text-align: left;
+  padding: 13px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+th {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.print-btn {
+  margin-top: 20px;
+  background: #172554;
+}
+
+.notice {
+  padding: 16px 20px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.notice strong {
+  color: #172554;
+}
+
+footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  .search-row button {
+    width: 100%;
+  }
+
+  .student-info, .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card, .search-card {
+    padding: 19px;
+  }
+}
+
+@media print {
+  body { background: white; }
+  .topbar, .welcome, .search-card, .notice, footer, .print-btn { display: none; }
+  .container { width: 100%; margin: 0; }
+  .result-card { display: block; box-shadow: none; }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🎓 Student Result Portal</div>
+    <span class="tagline">Your academic progress, at a glance</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">ACADEMIC RESULTS</p>
+      <h1>Check Your Results</h1>
+      <p>Enter your register number to view your examination result.</p>
+    </section>
+
+    <section class="search-card">
+      <label for="registerNo">Register Number</label>
+      <div class="search-row">
+        <input type="text" id="registerNo" placeholder="Example: STU1001">
+        <button id="searchBtn">View Result</button>
+      </div>
+      <p class="hint">Demo register numbers: STU1001, STU1002, STU1003</p>
+      <p id="message" class="message" aria-live="polite"></p>
+    </section>
+
+    <section id="resultCard" class="result-card hidden">
+      <div class="result-heading">
+        <div>
+          <p class="eyebrow">STUDENT REPORT</p>
+          <h2>Examination Result</h2>
+        </div>
+        <span id="statusBadge" class="status-badge">PASS</span>
+      </div>
+
+      <div class="student-info">
+        <div><span>Student Name</span><strong id="studentName">-</strong></div>
+        <div><span>Register Number</span><strong id="studentReg">-</strong></div>
+        <div><span>Course</span><strong id="studentCourse">-</strong></div>
+        <div><span>Semester</span><strong id="studentSemester">-</strong></div>
+      </div>
+
+      <h3>Subject-wise Marks</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Subject</th><th>Maximum</th><th>Mark</th><th>Grade</th></tr></thead>
+          <tbody id="marksBody"></tbody>
+        </table>
+      </div>
+
+      <div class="summary">
+        <div><span>Total Marks</span><strong id="totalMarks">-</strong></div>
+        <div><span>Percentage</span><strong id="percentage">-</strong></div>
+        <div><span>Result</span><strong id="finalResult">-</strong></div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Result</button>
+    </section>
+
+    <section class="notice">
+      <strong>Note:</strong> This is a sample student project. The displayed student records are demo data only.
+    </section>
+  </main>
+
+  <footer>© 2026 Student Result Portal · Designed for learning</footer>
+  <script src="script.js"></script>
+</body>
+</html>
